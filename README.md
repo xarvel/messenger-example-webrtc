@@ -2,6 +2,9 @@
 
 A real-time messaging application built with React Native and NestJS, featuring GraphQL subscriptions for live updates.
 
+![plot](./demo.png)
+
+
 ## Features
 
 - Real-time messaging with GraphQL subscriptions

@@ -1,13 +1,19 @@
 import React, {FC} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {StackParamList} from '../App.tsx';
 import {palette} from '../palette';
 
-export const LoginScreen: FC<NativeStackScreenProps<StackParamList, 'Login'>> = ({
-  navigation,
-}) => {
+export const LoginScreen: FC<
+  NativeStackScreenProps<StackParamList, 'Login'>
+> = ({navigation}) => {
   const loginAs = async (key: string) => {
     await AsyncStorage.setItem('authorization', key);
     navigation.navigate('Messenger', {
@@ -24,15 +30,13 @@ export const LoginScreen: FC<NativeStackScreenProps<StackParamList, 'Login'>> = 
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => loginAs('user1')}
-          >
+            onPress={() => loginAs('user1')}>
             <Text style={styles.buttonText}>Bob</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.button}
-            onPress={() => loginAs('user2')}
-          >
+            onPress={() => loginAs('user2')}>
             <Text style={styles.buttonText}>Alice</Text>
           </TouchableOpacity>
         </View>

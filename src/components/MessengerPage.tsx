@@ -60,7 +60,7 @@ export const MessengerPage: FC<MessengerChatProps> = ({chatID}) => {
   const [isTyping, setIsTyping] = useIsTyping(chatID);
 
   // Add call signal subscription to handle incoming calls
-  useCallSignalReceived(chatID, (signal) => {
+  useCallSignalReceived(chatID, signal => {
     if (signal.type === 'OFFER') {
       console.log('offer received signal', signal);
       navigation.navigate('Call', {
@@ -73,22 +73,21 @@ export const MessengerPage: FC<MessengerChatProps> = ({chatID}) => {
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
-          behavior="padding"
-          style={{
-            flex: 1,
-          }}
-          keyboardVerticalOffset={100}>
-
+        behavior="padding"
+        style={{
+          flex: 1,
+        }}
+        keyboardVerticalOffset={100}>
         <MessagesList
-            messagesRef={query}
-            metaRef={query}
-            chunkSize={20}
-            isTypingUser={isTyping}
+          messagesRef={query}
+          metaRef={query}
+          chunkSize={20}
+          isTypingUser={isTyping}
         />
         <MessageInput
-            connectionID={connectionID}
-            chatID={chatID}
-            onType={setIsTyping}
+          connectionID={connectionID}
+          chatID={chatID}
+          onType={setIsTyping}
         />
       </KeyboardAvoidingView>
     </SafeAreaView>

@@ -6,5 +6,5 @@ export const palette = {
   textWhite: '#F8F9F9',
   chatBackground: '#EFF5FB',
   red: '#E74C3C',
-  blue: '#4285F4'
+  blue: '#4285F4',
 };

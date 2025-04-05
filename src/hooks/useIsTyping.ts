@@ -11,7 +11,9 @@ export const useIsTyping = (chatID: string): [string | null, () => void] => {
     }
   `);
 
-  const isTypingResetTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isTypingResetTimeout = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
 
   const config: GraphQLSubscriptionConfig<useIsTypingSubscription> = useMemo(
     () => ({
@@ -46,7 +48,7 @@ export const useIsTyping = (chatID: string): [string | null, () => void] => {
     commit({
       variables: {chatID},
     });
-  },[commit, chatID]);
+  }, [commit, chatID]);
 
   return [isTyping, handleSetTyping];
 };

@@ -8,8 +8,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ReaderFragment } from 'relay-runtime';
-import { FragmentRefs } from "relay-runtime";
+import {ReaderFragment} from 'relay-runtime';
+import {FragmentRefs} from 'relay-runtime';
 export type MessagesList_meta$data = {
   readonly chat: {
     readonly participants: ReadonlyArray<{
@@ -20,90 +20,90 @@ export type MessagesList_meta$data = {
   readonly viewer: {
     readonly currentUserID: string;
   };
-  readonly " $fragmentType": "MessagesList_meta";
+  readonly ' $fragmentType': 'MessagesList_meta';
 };
 export type MessagesList_meta$key = {
-  readonly " $data"?: MessagesList_meta$data;
-  readonly " $fragmentSpreads": FragmentRefs<"MessagesList_meta">;
+  readonly ' $data'?: MessagesList_meta$data;
+  readonly ' $fragmentSpreads': FragmentRefs<'MessagesList_meta'>;
 };
 
 const node: ReaderFragment = {
-  "argumentDefinitions": [
+  argumentDefinitions: [
     {
-      "defaultValue": null,
-      "kind": "LocalArgument",
-      "name": "chatID"
-    }
+      defaultValue: null,
+      kind: 'LocalArgument',
+      name: 'chatID',
+    },
   ],
-  "kind": "Fragment",
-  "metadata": null,
-  "name": "MessagesList_meta",
-  "selections": [
+  kind: 'Fragment',
+  metadata: null,
+  name: 'MessagesList_meta',
+  selections: [
     {
-      "alias": null,
-      "args": null,
-      "concreteType": "Viewer",
-      "kind": "LinkedField",
-      "name": "viewer",
-      "plural": false,
-      "selections": [
+      alias: null,
+      args: null,
+      concreteType: 'Viewer',
+      kind: 'LinkedField',
+      name: 'viewer',
+      plural: false,
+      selections: [
         {
-          "alias": null,
-          "args": null,
-          "kind": "ScalarField",
-          "name": "currentUserID",
-          "storageKey": null
-        }
+          alias: null,
+          args: null,
+          kind: 'ScalarField',
+          name: 'currentUserID',
+          storageKey: null,
+        },
       ],
-      "storageKey": null
+      storageKey: null,
     },
     {
-      "alias": null,
-      "args": [
+      alias: null,
+      args: [
         {
-          "kind": "Variable",
-          "name": "id",
-          "variableName": "chatID"
-        }
+          kind: 'Variable',
+          name: 'id',
+          variableName: 'chatID',
+        },
       ],
-      "concreteType": "Chat",
-      "kind": "LinkedField",
-      "name": "chat",
-      "plural": false,
-      "selections": [
+      concreteType: 'Chat',
+      kind: 'LinkedField',
+      name: 'chat',
+      plural: false,
+      selections: [
         {
-          "alias": null,
-          "args": null,
-          "concreteType": "User",
-          "kind": "LinkedField",
-          "name": "participants",
-          "plural": true,
-          "selections": [
+          alias: null,
+          args: null,
+          concreteType: 'User',
+          kind: 'LinkedField',
+          name: 'participants',
+          plural: true,
+          selections: [
             {
-              "alias": null,
-              "args": null,
-              "kind": "ScalarField",
-              "name": "id",
-              "storageKey": null
+              alias: null,
+              args: null,
+              kind: 'ScalarField',
+              name: 'id',
+              storageKey: null,
             },
             {
-              "alias": null,
-              "args": null,
-              "kind": "ScalarField",
-              "name": "name",
-              "storageKey": null
-            }
+              alias: null,
+              args: null,
+              kind: 'ScalarField',
+              name: 'name',
+              storageKey: null,
+            },
           ],
-          "storageKey": null
-        }
+          storageKey: null,
+        },
       ],
-      "storageKey": null
-    }
+      storageKey: null,
+    },
   ],
-  "type": "Query",
-  "abstractKey": null
+  type: 'Query',
+  abstractKey: null,
 };
 
-(node as any).hash = "f1456b69522cda123a7c768ca0fc12ce";
+(node as any).hash = 'f1456b69522cda123a7c768ca0fc12ce';
 
 export default node;

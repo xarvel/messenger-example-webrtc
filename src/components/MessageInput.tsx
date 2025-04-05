@@ -26,13 +26,20 @@ const SEND_MESSAGE_MUTATION = graphql`
   }
 `;
 
-const SendButton: FC<{disabled: boolean; onPress: () => void}> = ({disabled, onPress}) => (
+const SendButton: FC<{disabled: boolean; onPress: () => void}> = ({
+  disabled,
+  onPress,
+}) => (
   <View style={styles.buttonContainer}>
     <Button title="Send" disabled={disabled} onPress={onPress} />
   </View>
 );
 
-export const MessageInput: FC<MessageInputProps> = ({connectionID, chatID, onType}) => {
+export const MessageInput: FC<MessageInputProps> = ({
+  connectionID,
+  chatID,
+  onType,
+}) => {
   const [text, setText] = useState('');
   const [commit] = useMutation<MessageInputMutation>(SEND_MESSAGE_MUTATION);
 

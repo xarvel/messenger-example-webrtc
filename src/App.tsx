@@ -22,7 +22,10 @@ export type StackParamList = {
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
-const MessengerHeaderRight: React.FC<{navigation: any; route: any}> = ({navigation, route}) => (
+const MessengerHeaderRight: React.FC<{navigation: any; route: any}> = ({
+  navigation,
+  route,
+}) => (
   <CallButton
     onPress={() => navigation.navigate('Call', {chatID: route.params.chatID})}
   />
@@ -44,14 +47,16 @@ const App: React.FC = () => {
             options={({navigation, route}) => ({
               title: 'Messages',
               headerBackTitle: 'Back',
-              headerRight: () => <MessengerHeaderRight navigation={navigation} route={route} />,
+              headerRight: () => (
+                <MessengerHeaderRight navigation={navigation} route={route} />
+              ),
             })}
           />
           <Stack.Screen
             name="Call"
             component={CallScreen}
             options={{
-                headerShown: false,
+              headerShown: false,
             }}
           />
         </Stack.Navigator>

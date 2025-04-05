@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import {palette} from "../palette.ts";
+import {palette} from '../palette.ts';
 
 type CallButtonProps = {
   onPress: () => void;

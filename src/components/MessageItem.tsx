@@ -39,12 +39,20 @@ const MessageMeta: FC<{
   time: string;
   side: MessageSide;
 }> = ({senderName, time, side}) => (
-  <View style={[styles.metaContainer, {justifyContent: side === 'left' ? 'flex-start' : 'flex-end'}]}>
+  <View
+    style={[
+      styles.metaContainer,
+      {justifyContent: side === 'left' ? 'flex-start' : 'flex-end'},
+    ]}>
     <Text style={styles.metaText}>{`${senderName} ${time}`}</Text>
   </View>
 );
 
-export const MessageItem: FC<MessageItemProps> = ({dataRef, getSide, getName}) => {
+export const MessageItem: FC<MessageItemProps> = ({
+  dataRef,
+  getSide,
+  getName,
+}) => {
   const data = useFragment(
     graphql`
       fragment MessageItem_data on Message {
@@ -64,14 +72,14 @@ export const MessageItem: FC<MessageItemProps> = ({dataRef, getSide, getName}) =
 
   return (
     <View style={[styles.container, styles[side]]}>
-      <MessageContent 
-        text={data.text} 
-        textColor={textColor} 
-        backgroundColor={backgroundColor} 
+      <MessageContent
+        text={data.text}
+        textColor={textColor}
+        backgroundColor={backgroundColor}
       />
-      <MessageMeta 
-        senderName={senderName} 
-        time={formatMessageTime(data.creationDate)} 
+      <MessageMeta
+        senderName={senderName}
+        time={formatMessageTime(data.creationDate)}
         side={side}
       />
     </View>
